@@ -1,7 +1,5 @@
 # Folder size reporting
 
-Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
-
 `Get-FolderSizeReport.ps1` reports logical bytes, file count, and rounded GB for each supplied filesystem folder. It accepts paths, pipeline input, or a text list and can export CSV.
 
 ```powershell
@@ -14,7 +12,7 @@ Brian reports having used the original scripts during his career. The checks des
 - Reparse-point entries are skipped, and a root that is itself a junction/symlink is rejected. Do not use a path whose ancestors redirect outside the scope you intend to scan.
 - A traversal error returns `Failed` and null totals rather than a partial size presented as complete.
 - `SizeBytes` is logical file length, not allocated disk usage. Hard links are counted per directory entry; files changing during enumeration can produce a non-atomic snapshot.
-- A folder-name-specific project-number field was removed from this standalone version.
+- Reports contain filesystem measurements only; folder names are not interpreted as project numbers.
 - CSV output overwrites an existing output file and creates missing parent directories.
 - Use only on authorized paths. Large trees may take time. No remote systems are contacted unless you supply a remote path.
 

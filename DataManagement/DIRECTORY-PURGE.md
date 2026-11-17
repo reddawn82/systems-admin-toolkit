@@ -19,10 +19,10 @@ After reviewing the targets and logs, omit -WhatIf for a live run with confirmat
 - Existing empty-source and log directories are needed for reliable preview: PowerShell may suppress their creation under -WhatIf, causing setup to fail. Preview invokes Robocopy with /L and can write a log, but does not request deletion.
 - Robocopy codes below 8 are reported as success. This is not independent verification that every intended item was removed. Read the log and inspect the destination.
 - No rollback or atomicity is provided. Permissions, open files and errors can leave a partially purged tree. Keep the source empty and control access to it for the entire run.
-- UNC behavior, reparse-point behavior, live deletion and failure recovery were not verified in this review.
+- The included tests do not cover UNC behavior, reparse-point behavior, live deletion or failure recovery.
 
 ## Verification
 
-The author reports repeated prior operational use; that is not a substitute for testing the unverified cases above. This publication preserves the existing implementation; only its warning text was expanded.
+Validation is limited to syntax, path checks and list-only previews against synthetic data.
 
 tests/DirectoryPurge.Preview.Tests.ps1 passed on Windows PowerShell 5.1.26100.9818 and PowerShell 7.6.9: syntax, real Robocopy list-only preview, unchanged synthetic file/hash, drive-root rejection, support-directory-parent rejection, missing target and nonempty-source refusal. No live purge was run. GUID-named fixtures and logs are retained under the temporary directory.
