@@ -1,8 +1,6 @@
 # Systems administration toolkit
 
-Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
-
-Practical Windows administration scripts with usage notes and reproducible checks.
+Practical Windows administration scripts with usage notes and reproducible checks. These utilities grew out of scripts I have used throughout my systems administration career. Test coverage below applies to the versions in this repository.
 
 ## Utilities
 
