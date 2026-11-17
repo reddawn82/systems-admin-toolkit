@@ -1,5 +1,7 @@
 # Workstation administration
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 ## Certificate-padding checks
 
 See [CERT-PADDING.md](CERT-PADDING.md) for the detection and remediation scripts, architecture requirements, preview usage, and mocked validation limits.
@@ -32,3 +34,7 @@ Actual uninstall operations prompt by default and can remove software/data. Vend
 Mocked tests passed in Windows PowerShell 5.1.26100.9818 and PowerShell 7.6.9: parsing, full-path and bare MSI commands, EXE arguments containing the word msiexec, ListOnly/WhatIf without a process launch, MSI reboot exit, failed exit, launch exception, and ambiguous matches. Registry reads and Start-Process were mocked. No installed app was inspected or removed; real vendor/MSI behavior remains untested. The parser accepts ordinary quoted/unquoted EXE commands, not arbitrary shell syntax.
 
 Run `tests/Uninstall.Tests.ps1` in a fresh PowerShell process.
+
+## Windows Update cache reset
+
+See [Windows Update reset](WINDOWS-UPDATE.md) for service-state preservation, backups, best-effort recovery and mock-only verification. No actual reset was run during this review.

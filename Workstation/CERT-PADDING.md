@@ -1,5 +1,7 @@
 # Certificate-padding checks
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 `Test-CertPadding.ps1` reports compliance for the WinTrust EnableCertPaddingCheck setting: exit 0 for the accepted value, exit 1 otherwise. `Enable-CertPadding.ps1` sets it to 1, preserving existing DWORD/string types and normalizing other types to DWORD.
 
 On 64-bit Windows, use a 64-bit PowerShell host. Both registry views are covered. On 32-bit Windows only the native path is used.

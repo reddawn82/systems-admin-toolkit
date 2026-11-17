@@ -1,5 +1,7 @@
 # Systems administration toolkit
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 Practical Windows administration scripts with usage notes and reproducible checks.
 
 ## Utilities
@@ -11,7 +13,7 @@ Practical Windows administration scripts with usage notes and reproducible check
 | [Network](Network/README.md) | ICMP availability | Real loopback and file/CSV tests |
 | [Network and sessions](docs/network-session-utilities.md) | iPerf3 launcher, remote logged-on sessions | Harmless native stub and command mocks |
 | [Registry](Registry/README.md) | Remote registry key/value report | Remoting and registry-query mocks |
-| [Workstation](Workstation/README.md) | Certificate-padding check/remediation, service state, application uninstall | Registry, WMI, and process-launch mocks |
+| [Workstation](Workstation/README.md) | Certificate-padding check/remediation, service state, application uninstall, Windows Update cache reset | Registry, WMI, process-launch and reset-recovery mocks |
 
 ## Use and verification
 

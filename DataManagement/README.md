@@ -1,5 +1,7 @@
 # Folder size reporting
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 `Get-FolderSizeReport.ps1` reports logical bytes, file count, and rounded GB for each supplied filesystem folder. It accepts paths, pipeline input, or a text list and can export CSV.
 
 ```powershell

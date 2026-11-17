@@ -1,5 +1,7 @@
 # Network and session utilities
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 ## Invoke-Iperf3.ps1
 
 Launches a locally installed iPerf3 executable. Client mode requires `-Server`; server mode listens until stopped. Use only on networks and endpoints you are authorized to test. This wrapper does not install iPerf3, open firewall ports, or start a remote server.

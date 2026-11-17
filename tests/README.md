@@ -1,5 +1,7 @@
 # Reproducing checks
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 Run each suite in a fresh PowerShell process from the repository root. Do not dot-source mocks into a normal administrative session.
 
 ```powershell
@@ -28,3 +30,7 @@ Availability uses loopback. Folder-size tests use synthetic files and a junction
 ## Directory purge preview only
 
 Run: powershell.exe -NoProfile -File .\tests\DirectoryPurge.Preview.Tests.ps1 (also tested with pwsh). Uses real Robocopy /L and synthetic retained folders. Never runs a live purge. See the directory-purge documentation for untested containment and deletion behavior.
+
+## Windows Update reset mocks
+
+Run powershell.exe -NoProfile -File .\tests\Reset.Tests.ps1, or use pwsh. Run in a fresh process: all service, cache-path, move and reboot operations are mocked. Never invoke the production reset as a test on your working machine.

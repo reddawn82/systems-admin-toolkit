@@ -1,5 +1,7 @@
 # Network utilities
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 ## Test-ComputerAvailability.ps1
 
 Checks ICMP reachability and returns PowerShell objects. Runs independently of Node Watch; no domain membership or external ping tool is required.

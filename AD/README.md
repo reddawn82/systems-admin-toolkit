@@ -1,5 +1,7 @@
 # Active Directory reports
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 These reports require the ActiveDirectory module (RSAT) and permission to read the requested directory data. They do not modify accounts. Use only in directories you administer; exported user data should remain private.
 
 ## AD_Export_Users.ps1

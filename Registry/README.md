@@ -1,5 +1,7 @@
 # Remote registry reporting
 
+Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
+
 `Get-RemoteRegistryValue.ps1` reads a key or named value and returns one structured result per target. It defaults to PowerShell remoting; optional PsExec support requires a separately installed executable and permissions to run it. The script does not automatically accept the Sysinternals EULA.
 
 ```powershell
