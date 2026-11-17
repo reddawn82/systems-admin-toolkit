@@ -1,5 +1,5 @@
-# docs
+# Usage guides
 
-Usage guides, prerequisites, and validation notes.
+[Network and session utilities](network-session-utilities.md) covers the iPerf3 launcher and remote session reporting, including prerequisites, examples and test coverage.
 
-This folder is a placeholder. No executable scripts or completed validation results have been published here yet.
+See the [toolkit index](../README.md) for the remaining utility guides.
