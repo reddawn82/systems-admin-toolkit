@@ -1,7 +1,5 @@
 # Network utilities
 
-Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
-
 ## Test-ComputerAvailability.ps1
 
 Checks ICMP reachability and returns PowerShell objects. Runs independently of Node Watch; no domain membership or external ping tool is required.
@@ -25,7 +23,7 @@ Results include successful/attempted pings, average reply time, elapsed time, an
 
 Loopback and synthetic-file tests passed on Windows PowerShell 5.1.26100.9818 and PowerShell 7.6.9. Coverage: parsing, two loopback replies, direct/file deduplication, comments/blank lines, nested CSV output, empty targets/list, count/timeout bounds, missing input, and invalid output path.
 
-No domain, remote-host, firewall, DNS-failure, or production-environment tests were performed. Marker scans and manual review are not a security guarantee. Test in your own lab before operational use.
+No domain, remote-host, firewall, DNS-failure, or production-environment tests were performed. Test in your own lab before operational use.
 
 Run the supplied smoke test from the repository root:
 
