@@ -1,7 +1,5 @@
 # Reproducing checks
 
-Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
-
 Run each suite in a fresh PowerShell process from the repository root. Do not dot-source mocks into a normal administrative session.
 
 ```powershell
