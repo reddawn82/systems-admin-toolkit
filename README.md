@@ -7,7 +7,7 @@ Practical Windows administration scripts with usage notes and reproducible check
 | Area | Scripts | Notes |
 | --- | --- | --- |
 | [Active Directory](AD/README.md) | User export/import, password updates, inactive-computer report | AD commands tested with mocks; no live domain validation |
-| [Data management](DataManagement/README.md) | Folder-size report | Real synthetic folders, CSVs, and junction fixtures |
+| [Data management](DataManagement/README.md) | Folder-size report, directory-contents purge | Folder report: synthetic/junction fixtures. Purge: list-only preview, no live deletion; [warnings](DataManagement/DIRECTORY-PURGE.md) |
 | [Network](Network/README.md) | ICMP availability | Real loopback and file/CSV tests |
 | [Network and sessions](docs/network-session-utilities.md) | iPerf3 launcher, remote logged-on sessions | Harmless native stub and command mocks |
 | [Registry](Registry/README.md) | Remote registry key/value report | Remoting and registry-query mocks |

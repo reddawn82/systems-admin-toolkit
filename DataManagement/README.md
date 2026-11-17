@@ -21,3 +21,7 @@
 `Get-FolderSizeReport.Tests.ps1` passed on Windows PowerShell 5.1.26100.9818 and PowerShell 7.6.9: parser, exact nested byte counts, empty directory, pipeline input, text-list input, nested CSV export, blank input, missing input, invalid output path, junction child exclusion and junction root rejection.
 
 Tests create and retain GUID-named synthetic folders under the temporary directory. Their junction targets remain inside the same synthetic fixture. No user files are removed. Live UNC shares, ACL-denied subtrees, concurrent mutations, long-path limits and file-symlink variants were not tested.
+
+## Directory contents purge
+
+See [directory purge](DIRECTORY-PURGE.md) for the separate destructive utility, required precautions and preview-only test coverage. Folder-report reparse protections above do not apply to the purge script.

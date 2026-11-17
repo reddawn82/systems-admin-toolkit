@@ -24,3 +24,7 @@ powershell.exe -NoProfile -File .\tests\Network.Tests.ps1
 The test runs above also passed using `pwsh -NoProfile -File` with PowerShell 7.6.9. BuildStub is a Windows PowerShell 5.1 build step. Remote-service tests use mocks on PS7; the actual service script needs Windows PowerShell 5.1.
 
 Availability uses loopback. Folder-size tests use synthetic files and a junction. Other suites replace external administrative commands with mocks, except the harmless iPerf argument-echo executable. No real domain, registry modification, uninstall, or remote service operation is tested. Unique temporary fixture directories are retained for inspection.
+
+## Directory purge preview only
+
+Run: powershell.exe -NoProfile -File .\tests\DirectoryPurge.Preview.Tests.ps1 (also tested with pwsh). Uses real Robocopy /L and synthetic retained folders. Never runs a live purge. See the directory-purge documentation for untested containment and deletion behavior.
