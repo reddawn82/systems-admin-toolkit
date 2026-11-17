@@ -1,7 +1,5 @@
 # Workstation administration
 
-Brian reports having used the original scripts during his career. The checks described here cover the revised public copies and do not independently verify that earlier operational use or establish live testing of the revisions.
-
 ## Certificate-padding checks
 
 See [CERT-PADDING.md](CERT-PADDING.md) for the detection and remediation scripts, architecture requirements, preview usage, and mocked validation limits.
@@ -37,4 +35,4 @@ Run `tests/Uninstall.Tests.ps1` in a fresh PowerShell process.
 
 ## Windows Update cache reset
 
-See [Windows Update reset](WINDOWS-UPDATE.md) for service-state preservation, backups, best-effort recovery and mock-only verification. No actual reset was run during this review.
+See [Windows Update reset](WINDOWS-UPDATE.md) for service-state preservation, backups, best-effort recovery and mock-only verification. The included tests use mocks and do not perform an actual reset.

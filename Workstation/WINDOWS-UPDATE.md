@@ -1,6 +1,6 @@
 # Windows Update cache reset
 
-Brian reports using the original script during his career. This revised public copy received the mock checks below, not a live Windows Update reset. Prior operational use has not been independently verified.
+Resets Windows Update caches while preserving initial service states and retaining cache backups. Validation covers mocked reset and recovery scenarios; it does not include a live reset with this version.
 
 ## Usage
 
