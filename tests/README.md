@@ -6,8 +6,8 @@ Run each suite in a fresh PowerShell process from the repository root. Do not do
 powershell.exe -NoProfile -File .\tests\Test-ComputerAvailability.Tests.ps1
 powershell.exe -NoProfile -File .\tests\Get-FolderSizeReport.Tests.ps1
 powershell.exe -NoProfile -File .\tests\Get-RemoteRegistryValue.Tests.ps1
-powershell.exe -NoProfile -File .\AD\AD-Reports.Mock.Tests.ps1
-powershell.exe -NoProfile -File .\AD\AD-Mutations.Mock.Tests.ps1
+powershell.exe -NoProfile -File .\tests\AD-Reports.Mock.Tests.ps1
+powershell.exe -NoProfile -File .\tests\AD-Mutations.Mock.Tests.ps1
 powershell.exe -NoProfile -File .\tests\CertPadding.Tests.ps1
 powershell.exe -NoProfile -File .\tests\Uninstall.Tests.ps1
 powershell.exe -NoProfile -File .\tests\Service.Tests.ps1

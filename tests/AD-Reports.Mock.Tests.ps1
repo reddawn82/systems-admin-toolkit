@@ -1,5 +1,6 @@
 # AD commands are replaced with in-memory fixtures. No domain is contacted.
 $ErrorActionPreference = 'Stop'
+$scriptDirectory = Join-Path (Split-Path -Parent $PSScriptRoot) 'AD'
 function Assert($condition, $message) { if (-not $condition) { throw $message } }
 function Throws([scriptblock]$code) { $threw=$false; try { & $code | Out-Null } catch { $threw=$true }; Assert $threw 'Expected terminating error' }
 function Import-Module { [CmdletBinding()]param([string]$Name); if($Name -ne 'ActiveDirectory'){throw 'Unexpected module'} }
@@ -28,11 +29,11 @@ $fixture=Join-Path ([IO.Path]::GetTempPath()) ('ad-report-test-'+[guid]::NewGuid
 New-Item -ItemType Directory -Path $fixture|Out-Null
 foreach($name in @('AD_Export_Users.ps1','Get-ADInactiveComputers.ps1')) {
  $tokens=$null;$errors=$null
- [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PSScriptRoot $name),[ref]$tokens,[ref]$errors)|Out-Null
+ [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $scriptDirectory $name),[ref]$tokens,[ref]$errors)|Out-Null
  Assert (-not $errors) "Parse failed: $name"
 }
-$export=Join-Path $PSScriptRoot 'AD_Export_Users.ps1'
-$inactive=Join-Path $PSScriptRoot 'Get-ADInactiveComputers.ps1'
+$export=Join-Path $scriptDirectory 'AD_Export_Users.ps1'
+$inactive=Join-Path $scriptDirectory 'Get-ADInactiveComputers.ps1'
 $out=Join-Path $fixture 'nested\users.csv'
 $r=@(& $export -SearchBase 'OU=Lab,DC=example,DC=invalid' -AdditionalProperty EmployeeID,EmployeeID -OutputPath $out)
 Assert ($r.Count -eq 1 -and $r[0].EmployeeID -eq 'TEST-1' -and $r[0].Enabled) 'Export projection failed'

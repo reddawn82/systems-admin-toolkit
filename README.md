@@ -2,12 +2,24 @@
 
 Practical Windows administration scripts with usage notes and reproducible checks. These utilities grew out of scripts I have used throughout my systems administration career. Test coverage below applies to the versions in this repository.
 
+## Start here
+
+Clone or download this repository and open PowerShell in the repository root on Windows. This example checks only localhost; it needs no domain or external tools and does not modify the system.
+
+```powershell
+.\Network\Test-ComputerAvailability.ps1 -ComputerName 127.0.0.1 -Count 2
+```
+
+A successful run should show `127.0.0.1` as `Online`, with two successful replies out of two attempts. This is an ICMP check, not a service-health check. The [computer availability guide](docs/computer-availability.md) explains the output. For a second read-only example, see the [folder-size report](docs/folder-size-report.md).
+
 ## Utilities
+
+Browse the [usage guides](docs/README.md) for prerequisites, safe previews, and script-specific limits. Start with reporting; use admin or destructive tools only after reviewing their warnings and testing on disposable data.
 
 | Area | Scripts | Notes |
 | --- | --- | --- |
 | [Active Directory](AD/README.md) | User export/import, password updates, inactive-computer report | AD commands tested with mocks; no live domain validation |
-| [Data management](DataManagement/README.md) | Folder-size report, directory-contents purge | Folder report: synthetic/junction fixtures. Purge: list-only preview, no live deletion; [warnings](DataManagement/DIRECTORY-PURGE.md) |
+| [Data management](DataManagement/README.md) | Folder-size report, directory-contents purge | Folder report: synthetic/junction fixtures. Purge: list-only preview, no live deletion; [warnings](docs/directory-purge.md) |
 | [Network](Network/README.md) | ICMP availability | Real loopback and file/CSV tests |
 | [Network and sessions](docs/network-session-utilities.md) | iPerf3 launcher, remote logged-on sessions | Harmless native stub and command mocks |
 | [Registry](Registry/README.md) | Remote registry key/value report | Remoting and registry-query mocks |

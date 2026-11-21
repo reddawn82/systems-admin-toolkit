@@ -1,5 +1,6 @@
 # Run in a fresh process. All AD commands are local mocks.
 $ErrorActionPreference='Stop'
+$scriptDirectory = Join-Path (Split-Path -Parent $PSScriptRoot) 'AD'
 Add-Type 'namespace Microsoft.ActiveDirectory.Management { public class ADIdentityNotFoundException : System.Exception { public ADIdentityNotFoundException(string m) : base(m) {} } }'
 function Assert($ok,$m){if(-not $ok){throw $m}}
 function Throws([scriptblock]$c){$yes=$false;try{& $c|Out-Null}catch{$yes=$true};Assert $yes 'Expected error'}
@@ -34,7 +35,7 @@ function Set-ADUser {
 }
 $fixture=Join-Path ([IO.Path]::GetTempPath()) ('ad-mutation-test-'+[guid]::NewGuid())
 New-Item -ItemType Directory -Path $fixture|Out-Null
-$create=Join-Path $PSScriptRoot 'AD_Import_Users.ps1';$reset=Join-Path $PSScriptRoot 'AD_Import_Set_Password.ps1'
+$create=Join-Path $scriptDirectory 'AD_Import_Users.ps1';$reset=Join-Path $scriptDirectory 'AD_Import_Set_Password.ps1'
 foreach($p in @($create,$reset)){$t=$null;$e=$null;[System.Management.Automation.Language.Parser]::ParseFile($p,[ref]$t,[ref]$e)|Out-Null;Assert (-not $e) 'Parser failed'}
 $csv=Join-Path $fixture 'users.csv'
 [pscustomobject]@{username='fixture';password='TEST-ONLY-NOT-A-REAL-PASSWORD';firstname='Example';lastname='User';description='fixture';ou='OU=Lab,DC=example,DC=invalid';EmployeeID='TEST1'}|Export-Csv -LiteralPath $csv -NoTypeInformation
